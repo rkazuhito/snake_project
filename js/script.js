@@ -1,7 +1,7 @@
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
 
-const audio = new Audio
+const audio = new Audio("assets/audio.mp3")
 
 const size = 30
 
@@ -96,7 +96,8 @@ const drawGrid=()=>{
 const checkEat =()=>{
     const head=snake[snake.length-1]
     if (head.x==food.x && head.y==food.y) {
-        snake.push(head)  
+        snake.push(head)
+        audio.play()  
 
         let x=randomPosition()
         let y=randomPosition()
